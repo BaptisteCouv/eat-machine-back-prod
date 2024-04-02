@@ -3,10 +3,10 @@ const cors = require("cors");
 require("dotenv").config();
 const mongoose = require("mongoose");
 
-// const mealsRoutes = require("./routes/listMealRoutes");
+const mealsRoutes = require("./routes/listMealRoutes");
 const foodStockNutritionalValueRoutes = require("./routes/foodStockNutritionalValueRoutes");
-// const categoryRoutes = require("./routes/categoryRoutes");
-// const foodBindRoutes = require("./routes/foodBindRoutes");
+const categoryRoutes = require("./routes/categoryRoutes");
+const foodBindRoutes = require("./routes/foodBindRoutes");
 
 const app = express();
 app.use(cors());
@@ -34,10 +34,10 @@ mongoose
     console.error("Erreur de connexion à la base de données:", error);
   });
 
-// app.use("/api/meals", mealsRoutes);
+app.use("/api/meals", mealsRoutes);
 app.use("/api/foodsNutritional", foodStockNutritionalValueRoutes);
-// app.use("/api/categories", categoryRoutes);
-// app.use("/api/foodBind", foodBindRoutes);
+app.use("/api/categories", categoryRoutes);
+app.use("/api/foodBind", foodBindRoutes);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () =>
