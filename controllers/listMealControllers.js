@@ -4,6 +4,8 @@ const Meals = require("../models/mealModel");
 exports.getAllMeals = async (req, res, next) => {
   Meals.find()
     .then(async (contracts) => {
+      console.log('-----------------');
+      console.log(contracts);
       var dateActuelle = new Date();
 
       var anneeActuelle = dateActuelle.getFullYear();
