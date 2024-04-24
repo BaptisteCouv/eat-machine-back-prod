@@ -7,6 +7,7 @@ const mealsRoutes = require("./routes/listMealRoutes");
 const foodStockNutritionalValueRoutes = require("./routes/foodStockNutritionalValueRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 const foodBindRoutes = require("./routes/foodBindRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 const app = express();
 app.use(cors());
@@ -38,6 +39,7 @@ app.use("/api/meals", mealsRoutes);
 app.use("/api/foodsNutritional", foodStockNutritionalValueRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/foodBind", foodBindRoutes);
+app.use("/api/auth", userRoutes);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () =>

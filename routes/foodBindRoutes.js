@@ -1,18 +1,18 @@
 const express = require("express");
-const FoudBindsControllers = require('../controllers/foodBindControllers')
+const FoudBindsControllers = require("../controllers/foodBindControllers");
+
+const auth = require("../middleware/auth");
 
 const router = express.Router();
 
-router.get("/", FoudBindsControllers.getAllFoodBind);
+router.get("/", auth, FoudBindsControllers.getAllFoodBind);
 
-router.get("/:id", FoudBindsControllers.getSpecificFoodBind);
+router.get("/:id", auth, FoudBindsControllers.getSpecificFoodBind);
 
-router.post("/", FoudBindsControllers.createOneFoodBind);
+router.post("/", auth, FoudBindsControllers.createOneFoodBind);
 
-router.put("/:id", FoudBindsControllers.updateFoodBind);
+router.put("/:id", auth, FoudBindsControllers.updateFoodBind);
 
-router.delete("/:id", FoudBindsControllers.deleteFoodBind);
-
-
+router.delete("/:id", auth, FoudBindsControllers.deleteFoodBind);
 
 module.exports = router;
