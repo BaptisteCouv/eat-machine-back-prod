@@ -16,4 +16,7 @@ router.put("/:id", auth, CategoryControllers.updateCategoryBind);
 // Route for delete meal
 router.delete("/:id", auth, CategoryControllers.deleteOneCategory);
 
+// Route fo et userName
+router.get("/userName/:id", auth, CategoryControllers.getUserName);
+
 module.exports = router;

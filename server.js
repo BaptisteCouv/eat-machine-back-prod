@@ -41,6 +41,8 @@ app.use("/api/categories", categoryRoutes);
 app.use("/api/foodBind", foodBindRoutes);
 app.use("/api/auth", userRoutes);
 
+app.set('trust proxy', true)
+
 const PORT = process.env.PORT;
 app.listen(PORT, () =>
   console.log(" -------------------- API running ! -------------------- ")

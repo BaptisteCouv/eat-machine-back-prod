@@ -46,3 +46,26 @@ exports.deleteOneCategory = (req, res, next) => {
     .then(() => res.status(200).json({ message: "Objet supprimé !" }))
     .catch((error) => res.status(400).json({ error }));
 };
+
+exports.getUserName = (req, res, next) => {
+  console.log(res);
+  
+  // const ids = req.query.ids;
+
+  // if (!ids) {
+  //   return res.status(400).json({ message: "Aucun ID spécifié." });
+  // }
+
+  // const idArray = Array.isArray(ids) ? ids : [ids];
+
+  // FoodNutritionalValue.find({ _id: { $in: idArray } })
+  //   .then((contracts) => {
+  //     if (contracts.length === 0) {
+  //       return res
+  //         .status(404)
+  //         .json({ message: "Aliment trouvé avec cet ID spécifique." });
+  //     }
+  //     res.status(200).json(contracts);
+  //   })
+  //   .catch((error) => res.status(400).json({ error }));
+};
